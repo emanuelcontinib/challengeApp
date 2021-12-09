@@ -16,6 +16,8 @@ import AppLoading from 'expo-app-loading';
 import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
 
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 export default function App() {
   const [fontsLoaded] = useFonts({
     Ubuntu_400Regular,
@@ -30,9 +32,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <StatusBar style={'inverted'} />
-      <NavigationContainer>
-        <AppRoutes />
-      </NavigationContainer>
+      <AppRoutes />
     </ThemeProvider>
   );
 }

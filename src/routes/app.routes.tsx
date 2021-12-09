@@ -1,25 +1,26 @@
 import React from "react";
-import { createStackNavigator } from '@react-navigation/stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+import { NavigationContainer } from '@react-navigation/native';
 
 import { LaunchDetails } from "../screens/LaunchDetails";
-import { Dashboard } from "../screens/Dasboard";
+import { Dashboard } from "../screens/Dashboard";
 
-const { Navigator, Screen } = createStackNavigator()
+const Stack = createNativeStackNavigator()
 
 export function AppRoutes() {
    return (
-      <Navigator
-         screenOptions={{ headerShown: false }}
-      >
-         <Screen
-            name="Dashboard"
-            component={Dashboard}
-         />
-         <Screen
-            name="LaunchDetails"
-            component={LaunchDetails}
-         />
-       </Navigator>
+      <NavigationContainer>
+         <Stack.Navigator>
+            <Stack.Screen
+               name="Dashboard"
+               component={Dashboard}
+            />
+            <Stack.Screen
+               name="LaunchDetails"
+               component={LaunchDetails}
+            />
+         </Stack.Navigator>
+      </NavigationContainer>
    )
 }

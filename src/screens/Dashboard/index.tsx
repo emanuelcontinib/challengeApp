@@ -1,5 +1,5 @@
 import { useNavigation } from "@react-navigation/core";
-import React from "react";
+import * as React from 'react';
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 import { CardComponent } from "../../Components/CardComponent";
 import {
